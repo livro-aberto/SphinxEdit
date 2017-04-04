@@ -1,7 +1,10 @@
 
-## Update database
+## Important files
 
-You may need:
+   application/view.py
+   application/template/edit.html
+
+## You may need to use the virtual environment
 
     source vir/bin/activate
 

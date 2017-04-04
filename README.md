@@ -28,6 +28,16 @@ Copy the config files
 
     cp conf/conf_default.py conf/conf.py
 
-If you are opening this to the internet, edit the `conf.py` file, specially changing your secret key.
+(If you are opening this to the internet, edit the `conf.py` file, specially changing your secret key.)
+
+Run it using
+
+    ./runserver
+
+then access it in your browser through the address:
+
+    http://127.0.0.1:5000/
+
+
 
 

@@ -1,0 +1,5 @@
+flask>=0.11.1
+Flask-Babel>=0.11.1
+sphinxcontrib-tikz>=0.4.2
+cloud-sptheme>=1.7.1
+Flask-Limiter>=0.9.3

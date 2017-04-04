@@ -1,8 +1,9 @@
 
 ## Important files
 
-   application/view.py
-   application/template/edit.html
+    application/view.py
+
+    application/template/edit.html
 
 ## You may need to use the virtual environment
 

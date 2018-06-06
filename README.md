@@ -24,7 +24,7 @@ Then type
 
 Copy the config files
 
-    cp conf_default.py conf.py
+    cp config_default.py config.py
 
     cp conf/conf_default.py conf/conf.py
 

@@ -46,8 +46,8 @@ def package():
 def build(timeout=10):
     # Replace this terrible implementation
     config_path = 'conf'
-    source_path = join('repos', 'source')
-    build_path = join('repos', 'build/html')
+    source_path = join('example', 'source')
+    build_path = join('example', 'build/html')
     command = 'sphinx-build -c ' + config_path + ' ' + source_path + ' ' + build_path
 
     process = Command(command)
@@ -65,13 +65,13 @@ filename = 'index'
 def edit():
     html_scroll = 0
     edit_scroll = 0
-    branch_source_path = join('repos', 'source', filename + '.rst')
-    branch_html_path = join('repos', 'build/html', filename + '.html')
+    branch_source_path = join('example', 'source', filename + '.rst')
     if request.method == 'POST':
         html_scroll = request.form['html_scroll']
         edit_scroll = request.form['edit_scroll']
         write_file(branch_source_path, request.form['code'])
     build()
+    branch_html_path = join('example', 'build/html', filename + '.html')
     print(branch_source_path)
     rst = load_file(branch_source_path)
     doc = render_template_string(load_file(branch_html_path), barebones=True)
@@ -83,12 +83,12 @@ def edit():
 @sphinxedit.route('/_images/<path:filename>')
 #@bookcloud.route('/edit/<project>/<branch>/images/<path:filename>', methods = ['GET'])
 def get_tikz(filename):
-    images_path = join('repos', 'build/html/_images')
+    images_path = join('example', 'build/html/_images')
     return flask.send_from_directory(os.path.abspath(images_path), filename)
 
 @sphinxedit.route('/<action>/_static/<path:filename>')
 def get_static(action, filename):
-    user_repo_path = join('repos', current_user.username)
+    user_repo_path = join('example', current_user.username)
     return flask.send_from_directory(os.path.abspath(join(user_repo_path, 'build/html/_static/')), filename)
 
 

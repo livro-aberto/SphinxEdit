@@ -15,11 +15,12 @@
 import sys
 import os
 
-style = "biz"
 
-html_theme = style
-html_theme_path = ["/var/www/BookCloud/conf/", ]
-html_static_path = [style + '/static']
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+html_theme = 'biz'
+html_theme_path = [current_directory]
+html_static_path = [os.path.join(current_directory, 'theme', 'static')]
 html_theme_options = {'nosidebar': False}
 
 
